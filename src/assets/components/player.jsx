@@ -71,7 +71,7 @@ export const Player = () =>{
                 </div>
             </div> */}
             <audio controls>
-                <source src="src/assets/music/No-Copyright-Lofi.mp3" type="audio/mpeg" />
+                <source src="https://dc703.4shared.com/img/ZodRM_72jq/9e34dbbf/dlink__2Fdownload_2FZodRM_5F72jq_2FNo-Copyright-Lofi.mp3_3Fsbsr_3Dc36c5cad68f87ed03fafdf576ffd49a5ad1_26bip_3DMTg2LjE5NS4yMzguMTY1_26lgfp_3D52_26bip_3DMTg2LjE5NS4yMzguMTY1/preview.mp3" type="audio/mpeg" />
             </audio>
         </div>
     )
