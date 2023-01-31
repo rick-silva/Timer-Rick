@@ -5,8 +5,6 @@ import { useState } from "react";
 export const Timer = () =>{
 
     const [segundosTotal, setSegundosTotal] = useState(0);
-    // const [minutos, setMinutos] = useState(0)
-    const [mute, setMute] = useState(1)
 
     const minutos = Math.floor(segundosTotal / 60)
     const segundos = segundosTotal % 60
@@ -82,8 +80,8 @@ export const Timer = () =>{
               type="button" 
               value="" 
               onClick={()=> {
-                setSegundosTotal(0) 
-              } 
+                  setSegundosTotal(0) 
+                } 
               }>Reset</button>
           </div> 
 

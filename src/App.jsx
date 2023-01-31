@@ -7,7 +7,7 @@ function App() {
   
 
   return (
-    <div id="body" className="bg-dark w-screen h-screen flex flex-col justify-center">
+    <div id="body" className="bg-dark w-screen h-screen flex flex-col justify-center relative">
       <BackgroundBTN />
       <Timer />
       <Player />
