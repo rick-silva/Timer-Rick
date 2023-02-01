@@ -20,5 +20,6 @@
 
             </div>
         )
-    }//fim component
+        
+}//fim component
 
