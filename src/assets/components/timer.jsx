@@ -2,6 +2,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
+// REACT ICONS
+import {TbPlayerPlay} from "react-icons/tb"
+import {TbPlayerStop} from "react-icons/tb"
+import {RxReset} from "react-icons/rx"
+
 export const Timer = () =>{
 
     const [segundosTotal, setSegundosTotal] = useState(0);
@@ -74,13 +79,13 @@ export const Timer = () =>{
           </div>
             <br />
           <div className="flex justify-center">
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value=""
               onClick={stopBreak}
-              >Pause</button>
+              > <TbPlayerStop className="w-5 h-5" /> </button>
 
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value=""
               onClick={()=>{
@@ -92,17 +97,17 @@ export const Timer = () =>{
                   }
                 }
               }
-             >Start</button>
+             > <TbPlayerPlay className="w-5 h-5"/> </button>
             
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value=""
               onClick={
                 () =>{setBreakTotal(0)}
               }
-             >Reset</button>
+             > <RxReset className="w-5 h-5"/> </button>
 
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value="" 
               onClick={
@@ -125,12 +130,12 @@ export const Timer = () =>{
           </div>
             <br />
           <div className="flex justify-center">
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value="" 
-              onClick={stop}>Pause</button>
+              onClick={stop}> <TbPlayerStop className="w-5 h-5" /> </button>
 
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value="" 
               onClick={()=> {
@@ -141,15 +146,15 @@ export const Timer = () =>{
                     console.log(segundos)
                   }
                 } 
-              }>Play</button>
+              }> <TbPlayerPlay className="w-5 h-5"/> </button>
             
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
               value="" 
               onClick={()=> {
                   setSegundosTotal(0)
                 } 
-              }>Reset</button>
+              }> <RxReset className="w-5 h-5"/> </button>
 
             <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
               type="button" 
