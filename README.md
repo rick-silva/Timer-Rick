@@ -15,6 +15,7 @@ Tecnologias utilizadas no Projeto :
 - [ReactJS](https://pt-br.reactjs.org/)
 - [ViteJS](https://vitejs.dev/)
 - [Tailwind](https://tailwindcss.com/)
+- [React-Icons](https://react-icons.github.io/react-icons/)
 
 ## 💾 Dempendencias
 - NPM 
