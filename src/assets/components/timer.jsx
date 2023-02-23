@@ -80,13 +80,13 @@ export const Timer = () =>{
           </div>
             <br />
           <div className="flex justify-center">
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
               type="button" 
               value=""
               onClick={stopBreak}
-              > <TbPlayerStop className="w-5 h-5" /> </button>
+              > <TbPlayerStop className="w-5 h-5 max-lg:w-4 max-lg:h-4" /> </button>
 
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
               type="button" 
               value=""
               onClick={()=>{
@@ -98,17 +98,17 @@ export const Timer = () =>{
                   }
                 }
               }
-             > <TbPlayerPlay className="w-5 h-5"/> </button>
+             > <TbPlayerPlay className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
             
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
               type="button" 
               value=""
               onClick={
                 () =>{setBreakTotal(0)}
               }
-             > <RxReset className="w-5 h-5"/> </button>
+             > <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
 
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500" 
+            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 max-lg:text-sm" 
               type="button" 
               value="" 
               onClick={
