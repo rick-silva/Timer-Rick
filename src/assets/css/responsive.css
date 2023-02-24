@@ -1,0 +1,15 @@
+
+
+@media (max-width: 384px) {
+    .mobile{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 6rem;
+    }
+
+    .mobile-button{
+        width: 6rem;
+        height: 1.5rem;
+    }
+}

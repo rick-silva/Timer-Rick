@@ -8,6 +8,8 @@ import {TbPlayerStop} from "react-icons/tb"
 import {TbPlayerPause} from 'react-icons/tb'
 import {RxReset} from "react-icons/rx"
 
+import '../css/responsive.css';
+
 export const Timer = () =>{
 
     const [segundosTotal, setSegundosTotal] = useState(0);
@@ -71,7 +73,7 @@ export const Timer = () =>{
     if(intervalo == false){
       return(
         <div className="w-screen flex flex-col items-center justify-center">
-            <h1 className="text-white w- text-6xl font-bold max-lg:text-5xl">Intervalo</h1>
+            <h1 className="text-white text-6xl font-bold max-lg:text-5xl">Intervalo</h1>
             {/* padStart completa a string com '2' caracteres, caso não haja '2' complete com 0 */}
           <div className="w-full flex flex-row items-center justify-center p-3 max-lg:p-2 text-white">
             <span className="text-3xl text-white max-lg:text-2xl">{ minutosBreak.toString().padStart(2, "0") }</span>
@@ -80,40 +82,45 @@ export const Timer = () =>{
           </div>
             <br />
           <div className="flex justify-center">
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
-              type="button" 
-              value=""
-              onClick={stopBreak}
-              > <TbPlayerStop className="w-5 h-5 max-lg:w-4 max-lg:h-4" /> </button>
+              <div className="flex justify-center mobile">
+                  <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
+                    type="button" 
+                    value=""
+                    onClick={stopBreak}
+                    > <TbPlayerStop className="w-5 h-5 max-lg:w-4 max-lg:h-4" /> </button>
 
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
-              type="button" 
-              value=""
-              onClick={()=>{
-                  if(breakTotal <= 0){
-                    setBreakTotal(10)
-                  }else{
-                    setBreakTotal(breakTotal - 1)
-                    console.log(segundosBreak)
-                  }
-                }
-              }
-             > <TbPlayerPlay className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
-            
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
-              type="button" 
-              value=""
-              onClick={
-                () =>{setBreakTotal(0)}
-              }
-             > <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
+                  <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
+                    type="button" 
+                    value=""
+                    onClick={()=>{
+                        if(breakTotal <= 0){
+                          setBreakTotal(10)
+                        }else{
+                          setBreakTotal(breakTotal - 1)
+                          console.log(segundosBreak)
+                        }
+                      }
+                    }
+                  > <TbPlayerPlay className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
+              </div>
 
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 max-lg:text-sm" 
-              type="button" 
-              value="" 
-              onClick={
-                  ()=> {setBreakTotal(0), setIntervalo(true)}
-              }>Timer</button>
+              <div className="flex justify-center mobile">
+                  <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
+                    type="button" 
+                    value=""
+                    onClick={
+                      () =>{setBreakTotal(0)}
+                    }
+                  > <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
+
+                  <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 max-lg:text-sm mobile-button" 
+                    type="button" 
+                    value="" 
+                    onClick={
+                        ()=> {setBreakTotal(0), setIntervalo(true)}
+                    }>Timer</button>
+              </div>
+
           </div> 
 
         </div>
@@ -130,39 +137,44 @@ export const Timer = () =>{
             <span className="text-3xl text-white max-lg:text-2xl">{ segundos.toString().padStart(2, "0") }</span>
           </div>
             <br />
-          <div className="flex justify-center">
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
-              type="button" 
-              value="" 
-              onClick={stop}> <TbPlayerStop className="w-5 h-5 max-lg:w-4 max-lg:h-4" /> </button>
+          <div className="flex justify-center ">
 
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
-              type="button" 
-              value="" 
-              onClick={()=> {
-                  if(segundosTotal <= 0){
-                    setSegundosTotal(10)
-                  }else{
-                    setSegundosTotal(segundosTotal - 1)
-                    console.log(segundos)
-                  }
-                } 
-              }> <TbPlayerPlay className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
+            <div className="flex justify-center mobile">
+                <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
+                  type="button" 
+                  value="" 
+                  onClick={stop}> <TbPlayerStop className="w-5 h-5 max-lg:w-4 max-lg:h-4" /> </button>
+
+                <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
+                  type="button" 
+                  value="" 
+                  onClick={()=> {
+                      if(segundosTotal <= 0){
+                        setSegundosTotal(10)
+                      }else{
+                        setSegundosTotal(segundosTotal - 1)
+                        console.log(segundos)
+                      }
+                    } 
+                  }> <TbPlayerPlay className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
+            </div>
             
-            <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2" 
-              type="button" 
-              value="" 
-              onClick={()=> {
-                  setSegundosTotal(0)
-                } 
-              }> <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
+            <div className="flex justify-center mobile">
+                <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
+                  type="button" 
+                  value="" 
+                  onClick={()=> {
+                      setSegundosTotal(0)
+                    } 
+                  }> <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
 
-            <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 max-lg:text-sm" 
-              type="button" 
-              value="" 
-              onClick={
-                  ()=> {setSegundosTotal(0),setIntervalo(false)}
-              }>Intervalo</button>
+                <button className="w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 max-lg:text-sm mobile-button" 
+                  type="button" 
+                  value="" 
+                  onClick={
+                      ()=> {setSegundosTotal(0),setIntervalo(false)}
+                  }>Intervalo</button>
+            </div>
           </div> 
 
         </div>
