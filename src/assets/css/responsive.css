@@ -1,5 +1,10 @@
 
 
+#song{
+    display: none;
+}
+
+
 @media (max-width: 384px) {
     .mobile{
         display: flex;

@@ -12,9 +12,9 @@ export const Player = () =>{
 
     return(
         <div className="w-96 absolute bottom-10">
-            <audio controls>
+            {/* <audio controls>
                 <source src={Music} type="audio/ogg" />
-            </audio>
+            </audio> */}
         </div>
     )
 }

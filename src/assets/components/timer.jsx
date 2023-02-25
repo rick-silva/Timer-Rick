@@ -8,6 +8,8 @@ import {TbPlayerStop} from "react-icons/tb"
 import {TbPlayerPause} from 'react-icons/tb'
 import {RxReset} from "react-icons/rx"
 
+import Music from '/src/music/GTA5_Message.ogg'
+
 import '../css/responsive.css';
 
 export const Timer = () =>{
@@ -32,6 +34,8 @@ export const Timer = () =>{
           if(segundosTotal === 0){
             console.log(`Menor que 0`)
             clearInterval(cronometro) 
+            //toca um som quando o timer termina
+            document.getElementById("song").play()
           }else{
             setSegundosTotal(segundosTotal - 1)
             console.log(segundos)
@@ -48,7 +52,9 @@ export const Timer = () =>{
 
         if(breakTotal === 0){
           console.log(`Menor que 0`)
-          clearInterval(timerIntervalo) 
+          clearInterval(timerIntervalo)
+          //toca um som quando o timer termina
+          document.getElementById("song").play()
         }else{
           setBreakTotal(breakTotal - 1)
           console.log(segundos)
@@ -123,6 +129,10 @@ export const Timer = () =>{
 
           </div> 
 
+            <audio id="song" controls>
+                  <source src={Music} type="audio/ogg" />
+            </audio>
+
         </div>
     
       )
@@ -176,6 +186,10 @@ export const Timer = () =>{
                   }>Intervalo</button>
             </div>
           </div> 
+
+            <audio id="song" controls>
+                    <source src={Music} type="audio/ogg" />
+            </audio>
 
         </div>
     )
