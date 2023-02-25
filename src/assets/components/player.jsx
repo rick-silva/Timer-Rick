@@ -1,4 +1,5 @@
 
+import Music from '/src/music/GTA5_Message.ogg'
 
 export const Player = () =>{
 
@@ -11,7 +12,9 @@ export const Player = () =>{
 
     return(
         <div className="w-96 absolute bottom-10">
-            <audio controls src="music/GTA5_Message.ogg"></audio>
+            <audio controls>
+                <source src={Music} type="audio/ogg" />
+            </audio>
         </div>
     )
 }
