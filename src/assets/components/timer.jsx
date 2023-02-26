@@ -8,7 +8,7 @@ import {TbPlayerStop} from "react-icons/tb"
 import {TbPlayerPause} from 'react-icons/tb'
 import {RxReset} from "react-icons/rx"
 
-import Music from '/src/music/GTA5_Message.ogg'
+import Music from '/src/music/TimerSong.mp3'
 
 import '../css/responsive.css';
 
@@ -55,6 +55,14 @@ export const Timer = () =>{
           clearInterval(timerIntervalo)
           //toca um som quando o timer termina
           document.getElementById("song").play()
+
+          // let span = document.querySelectorAll(".text-timer")
+          // for(let i=0; i< span.length; i++){
+          //   span[i].classList.remove("text-red-500")
+          //   console.log(`CLASS ${span}`)
+          //   console.log(`CLASS2`)
+          // }
+
         }else{
           setBreakTotal(breakTotal - 1)
           console.log(segundos)
@@ -69,11 +77,20 @@ export const Timer = () =>{
     const stop = () => {
       clearInterval(cronometro)
       console.log(`Parou aos ${segundos} segundos`)
+
+      // let span = document.querySelectorAll(".text-timer")
+      // for(let i=0; i< span.length; i++){
+      //   span[i].className += " text-red-500"
+      //   console.log(`CLASS ${span}`)
+      //   console.log(`CLASS2`)
+
+      // }
     }
 
     const stopBreak = () =>{
       clearInterval(timerIntervalo)
       console.log(`Intervalo parou aos ${segundosBreak} segundos`)
+      
     }
     
     if(intervalo == false){
@@ -82,9 +99,9 @@ export const Timer = () =>{
             <h1 className="text-white text-6xl font-bold max-lg:text-5xl">Intervalo</h1>
             {/* padStart completa a string com '2' caracteres, caso não haja '2' complete com 0 */}
           <div className="w-full flex flex-row items-center justify-center p-3 max-lg:p-2 text-white">
-            <span className="text-3xl text-white max-lg:text-2xl">{ minutosBreak.toString().padStart(2, "0") }</span>
-            <span className="text-2xl text-white max-lg:text-xl"> : </span>
-            <span className="text-3xl text-white max-lg:text-2xl">{ segundosBreak.toString().padStart(2, "0") }</span>
+            <span className="text-timer text-3xl text-white max-lg:text-2xl">{ minutosBreak.toString().padStart(2, "0") }</span>
+            <span className="text-timer text-2xl text-white max-lg:text-xl"> : </span>
+            <span className="text-timer text-3xl text-white max-lg:text-2xl">{ segundosBreak.toString().padStart(2, "0") }</span>
           </div>
             <br />
           <div className="flex justify-center">
@@ -142,9 +159,9 @@ export const Timer = () =>{
             <h1 className="text-white text-6xl font-bold max-lg:text-5xl">Timer</h1>
             {/* padStart completa a string com '2' caracteres, caso não haja '2' complete com 0 */}
           <div className="w-full flex flex-row items-center justify-center p-3 max-lg:p-2 text-white">
-            <span className="text-3xl text-white max-lg:text-2xl">{ minutos.toString().padStart(2, "0") }</span>
-            <span className="text-2xl text-white max-lg:text-xl"> : </span>
-            <span className="text-3xl text-white max-lg:text-2xl">{ segundos.toString().padStart(2, "0") }</span>
+            <span id="text-timer" className="text-timer text-3xl text-white max-lg:text-2xl">{ minutos.toString().padStart(2, "0") }</span>
+            <span className="text-timer text-2xl text-white max-lg:text-xl"> : </span>
+            <span className="text-timer text-3xl text-white max-lg:text-2xl">{ segundos.toString().padStart(2, "0") }</span>
           </div>
             <br />
           <div className="flex justify-center ">
