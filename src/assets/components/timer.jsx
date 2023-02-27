@@ -24,6 +24,9 @@ export const Timer = () =>{
     const minutosBreak = Math.floor(breakTotal / 60)
     const segundosBreak = breakTotal % 60
 
+    const [song, setSong] = useState(0)
+    const [songBreak, setSongBreak] = useState(0)
+
     let cronometro
     let timerIntervalo
 
@@ -35,7 +38,15 @@ export const Timer = () =>{
             console.log(`Menor que 0`)
             clearInterval(cronometro) 
             //toca um som quando o timer termina
-            document.getElementById("song").play()
+            if(song == 1){
+              document.getElementById("song").play()
+              console.log(`Timer Song IF: ${song}`)
+              setSong(0)
+            }
+            // else{
+            //   setSong(1)
+            //   console.log(`Timer Song: ${song}`)
+            // }
           }else{
             setSegundosTotal(segundosTotal - 1)
             console.log(segundos)
@@ -54,7 +65,11 @@ export const Timer = () =>{
           console.log(`Menor que 0`)
           clearInterval(timerIntervalo)
           //toca um som quando o timer termina
-          document.getElementById("song").play()
+            if(songBreak == 1){
+              document.getElementById("song").play()
+              console.log(`Timer Song IF: ${songBreak}`)
+              setSongBreak(0)
+            }
 
           // let span = document.querySelectorAll(".text-timer")
           // for(let i=0; i< span.length; i++){
@@ -118,6 +133,7 @@ export const Timer = () =>{
                     onClick={()=>{
                         if(breakTotal <= 0){
                           setBreakTotal(10)
+                          setSongBreak(1)
                         }else{
                           setBreakTotal(breakTotal - 1)
                           console.log(segundosBreak)
@@ -131,8 +147,10 @@ export const Timer = () =>{
                   <button className="flex justify-center items-center w-24 m-2.5 rounded-md bg-gradient-to-r from-green-400 to-blue-500 max-lg:w-20 max-lg:m-2 mobile-button" 
                     type="button" 
                     value=""
-                    onClick={
-                      () =>{setBreakTotal(0)}
+                    onClick={() =>{
+                        setBreakTotal(0)
+                        setSongBreak(0)
+                      }
                     }
                   > <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
 
@@ -178,6 +196,7 @@ export const Timer = () =>{
                   onClick={()=> {
                       if(segundosTotal <= 0){
                         setSegundosTotal(10)
+                        setSong(1)
                       }else{
                         setSegundosTotal(segundosTotal - 1)
                         console.log(segundos)
@@ -192,6 +211,7 @@ export const Timer = () =>{
                   value="" 
                   onClick={()=> {
                       setSegundosTotal(0)
+                      setSong(0)
                     } 
                   }> <RxReset className="w-5 h-5 max-lg:w-4 max-lg:h-4"/> </button>
 
