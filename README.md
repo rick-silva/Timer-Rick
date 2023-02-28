@@ -22,6 +22,10 @@ Tecnologias utilizadas no Projeto :
 ```
 npm install
 ```
+- React Icons
+```
+npm install react-icons --save
+```
 
 ## 💻 Projeto
 
