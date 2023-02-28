@@ -132,7 +132,7 @@ export const Timer = () =>{
                     value=""
                     onClick={()=>{
                         if(breakTotal <= 0){
-                          setBreakTotal(10)
+                          setBreakTotal(300)
                           setSongBreak(1)
                         }else{
                           setBreakTotal(breakTotal - 1)
@@ -158,7 +158,7 @@ export const Timer = () =>{
                     type="button" 
                     value="" 
                     onClick={
-                        ()=> {setBreakTotal(0), setIntervalo(true)}
+                        ()=> {setBreakTotal(0),setSongBreak(0), setIntervalo(true)}
                     }>Timer</button>
               </div>
 
@@ -195,7 +195,7 @@ export const Timer = () =>{
                   value="" 
                   onClick={()=> {
                       if(segundosTotal <= 0){
-                        setSegundosTotal(10)
+                        setSegundosTotal(1500)
                         setSong(1)
                       }else{
                         setSegundosTotal(segundosTotal - 1)
@@ -219,7 +219,7 @@ export const Timer = () =>{
                   type="button" 
                   value="" 
                   onClick={
-                      ()=> {setSegundosTotal(0),setIntervalo(false)}
+                      ()=> {setSegundosTotal(0),setSong(0),setIntervalo(false)}
                   }>Intervalo</button>
             </div>
           </div> 
