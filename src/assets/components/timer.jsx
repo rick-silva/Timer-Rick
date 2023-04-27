@@ -107,8 +107,11 @@ export const Timer = () =>{
       console.log(`Intervalo parou aos ${segundosBreak} segundos`)
       
     }
+
+    
     
     if(intervalo == false){
+      document.title = ` ${minutosBreak.toString().padStart(2, "0")} : ${segundosBreak.toString().padStart(2, "0")}`
       return(
         <div className="w-screen flex flex-col items-center justify-center">
             <h1 className="text-white text-6xl font-bold max-lg:text-5xl">Intervalo</h1>
@@ -172,6 +175,8 @@ export const Timer = () =>{
     
       )
     }else{
+      document.title = ` ${minutos.toString().padStart(2, "0")} : ${segundos.toString().padStart(2, "0")}`
+      
       return(
         <div className="w-screen flex flex-col items-center justify-center">
             <h1 className="text-white text-6xl font-bold max-lg:text-5xl">Timer</h1>
